@@ -51,15 +51,15 @@ Create an XML file and its corresponding XSD schema.
 
 **Перечисления** - это специальные типы данных, которые могут содержать ограниченный список значений. В XSD можно определить перечисления для ограничения значений элементов в XML-документе.
 ```
- <xs:element name="power_consumption">
-                      <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                          <xs:enumeration value="Low"/>
-                          <xs:enumeration value="Medium"/>
-                          <xs:enumeration value="High"/>
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
+<xs:element name="power_consumption">
+ <xs:simpleType>
+   <xs:restriction base="xs:string">
+      <xs:enumeration value="Low"/>
+      <xs:enumeration value="Medium"/>
+      <xs:enumeration value="High"/>
+   </xs:restriction>
+  </xs:simpleType>
+ </xs:element>
  ```
 
 **Шаблоны** - это механизм XSD, который позволяет определять общую структуру данных, которая может повторяться в XML-документе. Шаблоны могут быть использованы для определения элементов, которые имеют одинаковую структуру, но отличаются значениями.
