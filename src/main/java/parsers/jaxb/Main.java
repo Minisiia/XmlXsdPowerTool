@@ -42,8 +42,5 @@ public class Main {
                     + powerTool.getTc().isAutonomy()
             );
         }
-
-
-
     }
 }
