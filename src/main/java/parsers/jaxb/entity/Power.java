@@ -18,7 +18,7 @@ public class Power {
     public List<PowerTool> getPowerTools() {
         return powerTools;
     }
-   // @XmlElement(name = "power_tool")
+    @XmlElement(name = "power_tool")
     public void setPowerTools(List<PowerTool> powerTools) {
         this.powerTools = powerTools;
     }
