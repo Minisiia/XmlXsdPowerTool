@@ -14,7 +14,6 @@ import java.util.List;
 public class HandlerJaxb {
     private Marshaller marshal;
 
-
     public List<PowerTool> getAll() {
         List<PowerTool> powerTools = new ArrayList<>();
         Power power = new Power();

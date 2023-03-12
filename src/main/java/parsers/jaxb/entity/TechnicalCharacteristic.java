@@ -1,18 +1,23 @@
 package parsers.jaxb.entity;
 
-import enums.PowerConsumption;
+import parsers.jaxb.enums.PowerConsumption;
+import parsers.jaxb.enums.adapters.BooleanAdapter;
+import parsers.jaxb.enums.adapters.PowerConsumptionAdapter;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlRootElement(name = "tc")
-
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TechnicalCharacteristic {
+    @XmlElement(name = "power_consumption")
+    @XmlJavaTypeAdapter(PowerConsumptionAdapter.class)
     private PowerConsumption powerConsumption;
+    @XmlElement(name = "productivity")
     private int productivity;
-    @XmlValue
-    private boolean autonomy;
+    @XmlElement(name = "autonomy")
+    @XmlJavaTypeAdapter(BooleanAdapter.class)
+    private Boolean autonomy;
 
     public TechnicalCharacteristic() {
     }
@@ -27,7 +32,7 @@ public class TechnicalCharacteristic {
         return powerConsumption;
     }
 
-    @XmlElement(name = "power_consumption")
+
     public void setPowerConsumption(PowerConsumption powerConsumption) {
         this.powerConsumption = powerConsumption;
     }
@@ -36,17 +41,17 @@ public class TechnicalCharacteristic {
         return productivity;
     }
 
-    @XmlElement(name = "productivity")
+
     public void setProductivity(int productivity) {
         this.productivity = productivity;
     }
 
-    public boolean isAutonomy() {
+    public Boolean isAutonomy() {
         return autonomy;
     }
 
-    @XmlElement(name = "autonomy")
-    public void setAutonomy(boolean autonomy) {
+
+    public void setAutonomy(Boolean autonomy) {
         this.autonomy = autonomy;
     }
 
