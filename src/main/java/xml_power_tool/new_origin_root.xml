@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><origin>
+<power_tool>
+<model>DrillMaster 5000</model>
+<handy>Single-hand</handy>
+<tc>
+<power_consumption>Low</power_consumption>
+<productivity>120</productivity>
+<autonomy>Yes</autonomy>
+</tc>
+<material>Plastic</material>
+</power_tool>
+<power_tool>
+<model>Jigsaw 2000</model>
+<handy>Double-hand</handy>
+<tc>
+<power_consumption>Medium</power_consumption>
+<productivity>90</productivity>
+<autonomy>No</autonomy>
+</tc>
+<material>Metal</material>
+</power_tool>
+<power_tool>
+<model>Angle Grinder Pro</model>
+<handy>Double-hand</handy>
+<tc>
+<power_consumption>High</power_consumption>
+<productivity>70</productivity>
+<autonomy>No</autonomy>
+</tc>
+<material>Metal</material>
+</power_tool>
+<power_tool>
+<model>Belt Sander Mini</model>
+<handy>Single-hand</handy>
+<tc>
+<power_consumption>Low</power_consumption>
+<productivity>180</productivity>
+<autonomy>Yes</autonomy>
+</tc>
+<material>Plastic</material>
+</power_tool>
+<power_tool>
+<model>Rotary Hammer</model>
+<handy>Double-hand</handy>
+<tc>
+<power_consumption>High</power_consumption>
+<productivity>50</productivity>
+<autonomy>No</autonomy>
+</tc>
+<material>Metal</material>
+</power_tool>
+</origin>

@@ -1,7 +1,12 @@
-package xml_sax.entity;
+package parsers.jaxb.entity;
 
-import xml_sax.enums.Handy;
+import enums.Handy;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "power_tool")
 public class PowerTool {
     private String model;
     private Handy handy;
@@ -24,6 +29,7 @@ public class PowerTool {
         return model;
     }
 
+    //@XmlElement(name = "model")
     public void setModel(String model) {
         this.model = model;
     }
@@ -32,6 +38,7 @@ public class PowerTool {
         return handy;
     }
 
+    //@XmlElement(name = "handy")
     public void setHandy(Handy handy) {
         this.handy = handy;
     }
@@ -39,7 +46,7 @@ public class PowerTool {
     public String getOrigin() {
         return origin;
     }
-
+    //@XmlElement(name = "origin")
     public void setOrigin(String origin) {
         this.origin = origin;
     }
@@ -47,7 +54,7 @@ public class PowerTool {
     public TechnicalCharacteristic getTc() {
         return tc;
     }
-
+   // @XmlElement(name = "tc")
     public void setTc(TechnicalCharacteristic tc) {
         this.tc = tc;
     }
@@ -55,7 +62,7 @@ public class PowerTool {
     public String getMaterial() {
         return material;
     }
-
+  //  @XmlElement(name = "material")
     public void setMaterial(String material) {
         this.material = material;
     }

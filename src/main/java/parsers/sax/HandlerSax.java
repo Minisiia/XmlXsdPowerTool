@@ -1,23 +1,23 @@
-package xml_sax;
+package parsers.sax;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import xml_sax.entity.PowerTool;
-import xml_sax.entity.TechnicalCharacteristic;
-import xml_sax.enums.Handy;
-import xml_sax.enums.PowerConsumption;
+import entity.PowerTool;
+import entity.TechnicalCharacteristic;
+import enums.Handy;
+import enums.PowerConsumption;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Handler extends DefaultHandler {
+public class HandlerSax extends DefaultHandler {
     private String currentQName;
     private List<PowerTool> tools;
     private PowerTool currentTool;
     private TechnicalCharacteristic tc;
 
-    public Handler() {
+    public HandlerSax() {
         tools = new ArrayList<>();
     }
 

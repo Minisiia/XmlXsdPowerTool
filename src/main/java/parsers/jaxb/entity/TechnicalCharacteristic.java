@@ -1,10 +1,17 @@
-package xml_sax.entity;
+package parsers.jaxb.entity;
 
-import xml_sax.enums.PowerConsumption;
+import enums.PowerConsumption;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
+
+@XmlRootElement(name = "tc")
 
 public class TechnicalCharacteristic {
     private PowerConsumption powerConsumption;
     private int productivity;
+    @XmlValue
     private boolean autonomy;
 
     public TechnicalCharacteristic() {
@@ -20,6 +27,7 @@ public class TechnicalCharacteristic {
         return powerConsumption;
     }
 
+    //@XmlElement(name = "power_consumption")
     public void setPowerConsumption(PowerConsumption powerConsumption) {
         this.powerConsumption = powerConsumption;
     }
@@ -28,6 +36,7 @@ public class TechnicalCharacteristic {
         return productivity;
     }
 
+   // @XmlElement(name = "productivity")
     public void setProductivity(int productivity) {
         this.productivity = productivity;
     }
@@ -36,6 +45,7 @@ public class TechnicalCharacteristic {
         return autonomy;
     }
 
+   // @XmlElement(name = "autonomy")
     public void setAutonomy(boolean autonomy) {
         this.autonomy = autonomy;
     }
