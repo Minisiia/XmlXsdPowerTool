@@ -40,9 +40,11 @@ public class Main {
 
         System.out.println((char) 27 + "[34m" + "\nAll tools: " + (char) 27 + "[38m");
         Sorted.showAllTools(powerTools);
+        // Сортировка с помощью интерфейса Comparator
         Sorted.getSortedByToolsName(powerTools);
         Sorted.getSortedByToolsOrigin(powerTools);
         Sorted.getSortedByToolsProductivity(powerTools);
+        // Преобразование данного XML-документа с помощью XSLT-шаблона и TransformerFactory API
         XslTransformer.xslTransform();
     }
 }

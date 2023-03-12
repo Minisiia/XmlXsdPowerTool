@@ -52,9 +52,11 @@ public class Main {
 
             System.out.println((char) 27 + "[34m" + "\nAll tools: " + (char) 27 + "[38m");
             Sorted.showAllTools(tools);
+            // Сортировка с помощью интерфейса Comparator
             Sorted.getSortedByToolsName(tools);
             Sorted.getSortedByToolsOrigin(tools);
             Sorted.getSortedByToolsProductivity(tools);
+            // Преобразование данного XML-документа с помощью XSLT-шаблона и TransformerFactory API
             XslTransformer.xslTransform();
         }
     }
