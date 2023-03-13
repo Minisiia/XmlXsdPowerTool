@@ -10,9 +10,8 @@ import org.xml.sax.InputSource;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.xpath.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,13 +22,13 @@ public class HandlerXpath {
     private PowerTool powerTool;
     private TechnicalCharacteristic tc;
 
-    public HandlerXpath() throws XPathExpressionException, FileNotFoundException {
+    public HandlerXpath() throws XPathExpressionException, IOException {
 
         XPathFactory factory = XPathFactory.newInstance();
         XPath path = factory.newXPath();
         expression = path.compile("//power_tool | //power_tool/model | //power_tool/handy | //power_tool/origin | //power_tool/material | //power_tool/tc/power_consumption | //power_tool/tc/productivity | //power_tool/tc/autonomy");
-        File xml = new File("src/main/java/xml_power_tool/powertool.xml");
-        source = new InputSource(new FileInputStream(xml));
+        URL url = HandlerXpath.class.getResource("/xml_power_tool/powertool.xml");
+        source = new InputSource(url.openStream());
         powerTool = new PowerTool();
         tc = new TechnicalCharacteristic();
     }

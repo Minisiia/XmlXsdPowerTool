@@ -7,25 +7,20 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HandlerJaxb {
-    private Marshaller marshal;
 
     public List<PowerTool> getAll() {
         List<PowerTool> powerTools = new ArrayList<>();
         Power power = new Power();
         try {
-            // Создаем файл
-            File file = new File("src/main/java/xml_power_tool/powertool.xml");
-            // Вызываем статический метод JAXBContext
+            URL url = HandlerJaxb.class.getResource("/xml_power_tool/powertool.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Power.class);
-
-            // Считываем из файла
-            Unmarshaller unmar = jaxbContext.createUnmarshaller();
-            power = (Power) unmar.unmarshal(file);
+            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+            power = (Power) unmarshaller.unmarshal(url);
             powerTools = power.getPowerTools();
             for (PowerTool powerTool : powerTools)
             System.out.println(powerTool);

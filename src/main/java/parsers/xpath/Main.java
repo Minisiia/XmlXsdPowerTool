@@ -7,6 +7,7 @@ import xsl_transformer_from_xml_to_xml.XslTransformer;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ import java.util.List;
  */
 
 public class Main {
-    public static void main(String[] args) throws XPathExpressionException, FileNotFoundException, XMLStreamException {
+    public static void main(String[] args) throws XPathExpressionException, IOException, XMLStreamException {
         HandlerXpath handlerXpath = new HandlerXpath();
         List<PowerTool> powerTools = handlerXpath.getAll();
 

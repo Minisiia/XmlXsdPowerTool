@@ -21,7 +21,7 @@ public class HandlerStax {
     public HandlerStax() throws FileNotFoundException, XMLStreamException {
         XMLInputFactory factory = XMLInputFactory.newFactory();
 
-        reader = new FileReader("src/main/java/xml_power_tool/powertool.xml");
+        reader = new FileReader("src/main/resources/xml_power_tool/powertool.xml");
         xmlStreamReader = factory.createXMLStreamReader(reader);
 
     }

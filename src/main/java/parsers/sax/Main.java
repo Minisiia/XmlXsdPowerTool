@@ -43,7 +43,7 @@ public class Main {
 
         HandlerSax handler = new HandlerSax();
 
-        File file = new File("src/main/java/xml_power_tool/powertool.xml");
+        File file = new File("src/main/resources/xml_power_tool/powertool.xml");
 
         if (file.exists()) {
             parser.parse(file, handler);

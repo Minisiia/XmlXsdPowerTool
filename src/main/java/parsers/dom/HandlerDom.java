@@ -26,7 +26,7 @@ public class HandlerDom extends DefaultHandler {
 
         DocumentBuilder db = dbf.newDocumentBuilder();
 
-        document = db.parse("src/main/java/xml_power_tool/powertool.xml");
+        document = db.parse("src/main/resources/xml_power_tool/powertool.xml");
     }
 
     public List<PowerTool> getAll() {

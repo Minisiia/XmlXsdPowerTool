@@ -12,10 +12,10 @@ public class XslTransformer {
         try {
             TransformerFactory tf = TransformerFactory.newInstance();
             // установка используемого XSL-преобразования
-            Transformer transformer = tf.newTransformer(new StreamSource("src/main/java/xml_power_tool/powertool.xslt"));
+            Transformer transformer = tf.newTransformer(new StreamSource("src/main/resources/xml_power_tool/powertool.xslt"));
             // установка исходного XML-документа и конечного XML-файла
-            transformer.transform(new StreamSource("src/main/java/xml_power_tool/powertool.xml"),
-                    new StreamResult("src/main/java/xml_power_tool/new_origin_root.xml"));
+            transformer.transform(new StreamSource("src/main/resources/xml_power_tool/powertool.xml"),
+                    new StreamResult("src/main/resources/xml_power_tool/new_origin_root.xml"));
             System.out.println("\nTransform complete");
         } catch (
                 TransformerException e) {
