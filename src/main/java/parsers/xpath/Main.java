@@ -1,12 +1,10 @@
 package parsers.xpath;
 
+import color_text.ColorText;
 import entity.PowerTool;
 import sort_comparator.Sorted;
-import xsl_transformer_from_xml_to_xml.XslTransformer;
 
-import javax.xml.stream.XMLStreamException;
 import javax.xml.xpath.XPathExpressionException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -36,15 +34,14 @@ import java.util.List;
  */
 
 public class Main {
-    public static void main(String[] args) throws XPathExpressionException, IOException, XMLStreamException {
+    public static void main(String[] args) throws XPathExpressionException, IOException {
         HandlerXpath handlerXpath = new HandlerXpath();
         List<PowerTool> powerTools = handlerXpath.getAll();
 
-        System.out.println((char) 27 + "[34m" + "\nAll tools: " + (char) 27 + "[38m");
+        System.out.println(ColorText.BLUE + "\nAll tools: " + ColorText.BLACK);
         Sorted.showAllTools(powerTools);
         Sorted.getSortedByToolsName(powerTools);
         Sorted.getSortedByToolsOrigin(powerTools);
         Sorted.getSortedByToolsProductivity(powerTools);
-        XslTransformer.xslTransform();
     }
 }

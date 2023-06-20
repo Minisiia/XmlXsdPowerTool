@@ -1,5 +1,6 @@
 package sort_comparator;
 
+import color_text.ColorText;
 import entity.PowerTool;
 
 import java.util.Comparator;
@@ -18,20 +19,20 @@ public class Sorted {
     }
 
     public static void getSortedByToolsName(List<PowerTool> powerTools) {
-        System.out.println((char) 27 + "[34m" + "\nSorted by tools name: " + (char) 27 + "[38m");
+        System.out.println(ColorText.BLUE + "\nSorted by tools name: " + ColorText.BLACK);
         powerTools.sort(Comparator.comparing(PowerTool::getModel));
         showAllTools(powerTools);
     }
 
     public static void getSortedByToolsOrigin(List<PowerTool> powerTools) {
-        System.out.println((char) 27 + "[34m" + "\nSorted by tools origin: " + (char) 27 + "[38m");
+        System.out.println(ColorText.BLUE + "\nSorted by tools origin: " + ColorText.BLACK);
         powerTools.sort(Comparator.comparing(PowerTool::getOrigin));
         showAllTools(powerTools);
     }
 
     public static void getSortedByToolsProductivity(List<PowerTool> powerTools) {
-        System.out.println((char)27+"[34m"+"\nSorted by tools productivity: "+(char)27+"[38m");
-        powerTools.sort(Comparator.comparingInt(o ->o.getTc().getProductivity()));
+        System.out.println(ColorText.BLUE + "\nSorted by tools productivity: " + ColorText.BLACK);
+        powerTools.sort(Comparator.comparingInt(o -> o.getTc().getProductivity()));
         showAllTools(powerTools);
     }
 }

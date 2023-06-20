@@ -1,5 +1,6 @@
 package parsers.jaxb;
 
+import color_text.ColorText;
 import parsers.jaxb.entity.PowerTool;
 
 import java.util.List;
@@ -33,7 +34,7 @@ public class Main {
     public static void main(String[] args) {
         HandlerJaxb handlerJaxb = new HandlerJaxb();
         List<PowerTool> tools = handlerJaxb.getAll();
-        System.out.println((char) 27 + "[34m" + "\nAll tools: " + (char) 27 + "[38m");
+        System.out.println(ColorText.BLUE + "\nAll tools: " + ColorText.BLACK);
         for (PowerTool powerTool : tools) {
             System.out.println(powerTool.getModel() + " " + powerTool.getHandy() + " "
                     + powerTool.getOrigin() + " " + powerTool.getMaterial() + " "

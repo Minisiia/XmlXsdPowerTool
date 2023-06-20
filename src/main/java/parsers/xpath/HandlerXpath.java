@@ -8,7 +8,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-import javax.xml.stream.XMLStreamException;
 import javax.xml.xpath.*;
 import java.io.*;
 import java.net.URL;
@@ -17,8 +16,8 @@ import java.util.List;
 
 public class HandlerXpath {
 
-    private InputSource source;
-    private XPathExpression expression;
+    private final InputSource source;
+    private final XPathExpression expression;
     private PowerTool powerTool;
     private TechnicalCharacteristic tc;
 
@@ -28,12 +27,16 @@ public class HandlerXpath {
         XPath path = factory.newXPath();
         expression = path.compile("//power_tool | //power_tool/model | //power_tool/handy | //power_tool/origin | //power_tool/material | //power_tool/tc/power_consumption | //power_tool/tc/productivity | //power_tool/tc/autonomy");
         URL url = HandlerXpath.class.getResource("/xml_power_tool/powertool.xml");
+        if (url == null) {
+            System.out.println("File not found. Program completed.");
+            System.exit(0);
+        }
         source = new InputSource(url.openStream());
         powerTool = new PowerTool();
         tc = new TechnicalCharacteristic();
     }
 
-    public List<PowerTool> getAll() throws XMLStreamException, XPathExpressionException {
+    public List<PowerTool> getAll() throws XPathExpressionException {
 
         List<PowerTool> powerTools = new ArrayList<>();
 
@@ -105,8 +108,6 @@ public class HandlerXpath {
                 }
             }
         }
-
         return powerTools;
     }
-
 }

@@ -1,5 +1,6 @@
 package parsers.stax;
 
+import color_text.ColorText;
 import entity.PowerTool;
 import sort_comparator.Sorted;
 import xsl_transformer_from_xml_to_xml.XslTransformer;
@@ -37,7 +38,7 @@ public class Main {
        HandlerStax handlerStax = new HandlerStax();
        List<PowerTool> powerTools = handlerStax.getAll();
 
-        System.out.println((char) 27 + "[34m" + "\nAll tools: " + (char) 27 + "[38m");
+        System.out.println(ColorText.BLUE + "\nAll tools: " + ColorText.BLACK);
         Sorted.showAllTools(powerTools);
         // Сортировка с помощью интерфейса Comparator
         Sorted.getSortedByToolsName(powerTools);

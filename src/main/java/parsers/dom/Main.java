@@ -1,5 +1,6 @@
 package parsers.dom;
 
+import color_text.ColorText;
 import entity.PowerTool;
 import org.xml.sax.SAXException;
 import sort_comparator.Sorted;
@@ -38,7 +39,7 @@ public class Main {
         HandlerDom handlerDom = new HandlerDom();
         List<PowerTool> powerTools = handlerDom.getAll();
 
-        System.out.println((char) 27 + "[34m" + "\nAll tools: " + (char) 27 + "[38m");
+        System.out.println(ColorText.BLUE + "\nAll tools: " + ColorText.BLACK);
         Sorted.showAllTools(powerTools);
         // Сортировка с помощью интерфейса Comparator
         Sorted.getSortedByToolsName(powerTools);
